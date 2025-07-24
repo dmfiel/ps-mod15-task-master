@@ -49,10 +49,6 @@ Manage Tasks:
 - DELETE /api/tasks/:taskId
   -- Delete a single task.
 
-### Links
-
-- Live Site URL: (https://fiel.us/ip-flag-tracker/)
-
 ## My process
 
 ### Built with
