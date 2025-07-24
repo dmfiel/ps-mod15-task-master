@@ -2,17 +2,21 @@
   "name": "ps-mod-15-task-master",
   "version": "1.0.0",
   "description": "",
-  "main": "src/server.js",
+  "main": "src/server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/server.js"
+    "tsc": "npx tsc --watch",
+    "node": "nodemon dist/server.js",
+    "dev": "parallelshell \"tsc --watch\" \"nodemon dist/server.js\"",
+    "parafix": "npm install --save-dev parallelshell@3.0.1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
+  "type": "commonjs",
   "dependencies": {
     "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
@@ -22,6 +26,8 @@
     "passport-github2": "^0.1.12"
   },
   "devDependencies": {
-    "nodemon": "3.1.10"
+    "@types/node": "^24.0.15",
+    "nodemon": "3.1.10",
+    "parallelshell": "^3.0.1"
   }
 }

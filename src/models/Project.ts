@@ -1,14 +1,13 @@
 import mongoose, { Schema } from 'mongoose';
 
-// This is the model you will be modifying
-const noteSchema = new Schema(
+const projectSchema = new Schema(
   {
-    title: {
+    name: {
       type: String,
       required: true,
       trim: true
     },
-    content: {
+    description: {
       type: String,
       required: true
     },
@@ -21,6 +20,6 @@ const noteSchema = new Schema(
   { timestamps: true }
 );
 
-const Note = mongoose.model('Note', noteSchema);
+const Project = mongoose.model('Project', projectSchema);
 
-export default Note;
+export default Project;

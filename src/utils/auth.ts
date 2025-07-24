@@ -1,9 +1,14 @@
 import jwt from 'jsonwebtoken';
+import express from 'express';
 
 const secret = process.env.JWT_SECRET;
 const expiration = '2h';
 
-export function authMiddleware(req, res, next) {
+export function authMiddleware(
+  req: express.Request,
+  res: express.Response,
+  next
+) {
   let token = req.headers.authorization || req.body?.token || req.query?.token;
 
   if (token) {

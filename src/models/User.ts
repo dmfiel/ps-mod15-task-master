@@ -1,11 +1,19 @@
 import mongoose, { Schema } from 'mongoose';
 import bcrypt from 'bcrypt';
 
+export interface IUser extends Document {
+  _id: string;
+  username: string;
+  email: string;
+  password: string;
+  githubID: string;
+  isCorrectPassword: (password: string) => boolean;
+}
+
 const userSchema = new Schema({
   username: {
     type: String,
     required: true,
-    unique: true,
     trim: true
   },
   email: {
@@ -36,7 +44,7 @@ userSchema.pre('save', async function (next) {
 });
 
 // custom method to compare and validate password for logging in
-userSchema.methods.isCorrectPassword = async function (password) {
+userSchema.methods.isCorrectPassword = async function (password: string) {
   return bcrypt.compare(password, this.password);
 };
 
