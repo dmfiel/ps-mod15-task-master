@@ -21,33 +21,33 @@ The API provides secure row-level authenticated endpoints to allow clients to:
 Manage Users:
 
 - POST /api/users/register
-  -- Register to create a new user, ensuring the password gets hashed securely.
+  - Register to create a new user, ensuring the password gets hashed securely.
 - POST /api/users/login
-  -- Login to find a user by their email, compare the provided password with the stored hash, and, if successful, generate and return a signed JSON Web Token (JWT).
+  - Login to find a user by their email, compare the provided password with the stored hash, and, if successful, generate and return a signed JSON Web Token (JWT).
 
 Manage Projects:
 
 - POST /api/projects
-  -- Create a new project assigned as owned by the current user.
+  - Create a new project assigned as owned by the current user.
 - GET /api/projects
-  -- Get all projects owned by the currently logged-in user.
+  - Get all projects owned by the currently logged-in user.
 - GET /api/projects/:id
-  -- Get a single project by its ID.
+  - Get a single project by its ID.
 - PUT /api/projects/:id
-  -- Update a project.
-- DELETE /api/projects/:id:
-  -- Delete a project.
+  - Update a project.
+- DELETE /api/projects/:id
+  - Delete a project.
 
 Manage Tasks:
 
 - POST /api/projects/:projectId/tasks
-  -- Create a new task for a specific project.
+  - Create a new task for a specific project.
 - GET /api/projects/:projectId/tasks
-  -- Get all tasks for a specific project.
+  - Get all tasks for a specific project.
 - PUT /api/tasks/:taskId
-  -- Update a single task.
+  - Update a single task.
 - DELETE /api/tasks/:taskId
-  -- Delete a single task.
+  - Delete a single task.
 
 ## My process
 
